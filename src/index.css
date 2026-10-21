@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Reference palette strictly applied */
+  --color-canvas: #050713;
+  --color-surface-card: #111528;
+  --color-surface-elevated: #191D32;
+  --color-surface-border: #232942;
+  --color-surface-hover: #1D233D;
+  
+  --color-accent-blue: #2867F5;
+  --color-accent-blue-hover: #1D54DB;
+  --color-accent-blue-glow: rgba(40, 103, 245, 0.35);
+  --color-blue-deep: #10275C;
+
+  --color-text-primary: #F3F5FC;
+  --color-text-secondary: #8B91A8;
+  --color-text-muted: #626880;
+
+  --color-status-positive: #27C875;
+  --color-status-negative: #F05268;
+
+  /* Axia backward-compatible color aliases */
+  --color-axia-navy: #050713;
+  --color-axia-blue: #2867F5;
+  --color-axia-blue-dark: #10275C;
+  --color-axia-blue-light: #4480FF;
+  --color-axia-cream: #F3F5FC;
+  --color-axia-cream-dark: #8B91A8;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #050713;
+  color: #F3F5FC;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle tech ambient background glow */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 0%, #10275C 0%, #050713 60%);
+}
+
+.card-glow {
+  box-shadow: 0 8px 32px -4px rgba(5, 7, 19, 0.6), 0 0 24px -6px rgba(40, 103, 245, 0.15);
+}
+
+.pill-glow {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 20px 2px rgba(40, 103, 245, 0.2);
+}
+
+.blue-glow {
+  box-shadow: 0 0 25px rgba(40, 103, 245, 0.45);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050713;
+}
+::-webkit-scrollbar-thumb {
+  background: #232942;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2867F5;
+}
+
+/* Hide scrollbar for tabs */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
